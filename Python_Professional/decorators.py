@@ -18,5 +18,10 @@ def random_func():
 def sum(a: int, b:int) -> int:
     return a + b
 
+@execution_time
+def greething(name="Cesar"):
+    print("Hi " + name)
+
 random_func()
 sum(1,2)
+greething()
