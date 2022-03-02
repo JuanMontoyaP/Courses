@@ -13,3 +13,5 @@ In this Platzi Course I learned the following topics:
 - Error exceptions.
 - Assert statement.
 - File management.
+
+In this course I developed the [hangman game miniproject](https://github.com/JuanMontoyaP/Courses/blob/main/Python_Intermediate/hangman.py)
