@@ -1,6 +1,6 @@
 # Python Professional COurse.
 
-This course follow these topics:
+This course covers these topics:
 - Static typing
 - Closures
 - Decorators
