@@ -19,8 +19,7 @@ Arduino projects in the Samsung Course of programming.
 [This practices is about buzzer playing in different musical tones.](./Practice6/)
 
 ### Practice 7
-This practice is an intermittent led.
-
+[This practices is about moving a servomotor with a potentiometer](./Practice7/)
 ### Practice 8
 This practice is an intermittent led.
 
