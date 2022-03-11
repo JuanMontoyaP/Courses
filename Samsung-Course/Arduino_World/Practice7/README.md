@@ -1,6 +1,6 @@
 # Practice 7
 
-This practices is about two intermittent leds. You can see the circuit below.
+This practices is about moving a servomotor with a potentiometer in different angles. You can see the circuit below.
 
 ![alt text](Practice7.png "Circuit")
 
