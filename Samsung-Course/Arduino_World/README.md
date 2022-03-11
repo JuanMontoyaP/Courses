@@ -16,7 +16,7 @@ Arduino projects in the Samsung Course of programming.
 [This practice is about lighting a led when is dark.](./Practice5/)
 
 ### Practice 6
-This practice is an intermittent led.
+[This practices is about buzzer playing in different musical tones.](./Practice6/)
 
 ### Practice 7
 This practice is an intermittent led.
