@@ -13,7 +13,7 @@ Arduino projects in the Samsung Course of programming.
 [This practice is lighting a led in a progressive way.](./Practice4/)
 
 ### Practice 5
-This practice is an intermittent led.
+[This practice is about lighting a led when is dark.](./Practice5/)
 
 ### Practice 6
 This practice is an intermittent led.
