@@ -22,11 +22,10 @@ Arduino projects in the Samsung Course of programming.
 [This practices is about moving a servomotor with a potentiometer.](./Practice7/)
 
 ## Projects
-There were three projects in the Course, see them below.
+There were two projects in the Course, see them below.
 
 ### Task 1
 [The first task was about changing the pace at the leds were turning on](./Task1/)
 
 ### Task 2
-
-### Task 3
+[The second task was about opening a garage and turning on the lights when a car is going to go through, and when a sensor detects that the car is already into the garage the program has to turn off the lights and close de garage.](./Garage/)
