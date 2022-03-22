@@ -42,9 +42,21 @@ class Person(BaseModel):
     is_married: Optional[bool] = Field(default=None)
 
 class Location(BaseModel):
-    city: str
-    state: str
-    country: str
+    city: str = Field(
+        ...,
+        max_length=50,
+        min_length=1
+    )
+    state: str = Field(
+        ...,
+        min_length=1,
+        max_length=50
+    )
+    country: str = Field(
+        ...,
+        min_length=1,
+        max_length=50
+    )
 
 @app.get("/")
 def home():
