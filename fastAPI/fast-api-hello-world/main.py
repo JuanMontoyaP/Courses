@@ -3,8 +3,8 @@ from typing import Optional
 from enum import Enum
 
 # Pydantic
-from pydantic import BaseModel
-from pydantic import Field, EmailStr
+from pydantic import BaseModel, EmailStr
+from pydantic import Field
 
 # FastAPI
 from fastapi import FastAPI
@@ -25,37 +25,55 @@ class Person(BaseModel):
     first_name: str = Field(
         ..., 
         min_length=1,
-        max_length=50
+        max_length=50,
+        example="Facundo"
         )
     last_name: str = Field(
         ..., 
         min_length=1,
-        max_length=50
+        max_length=50,
+        example="Torres"
         )
     age: int = Field(
         ...,
         gt=0,
-        le=115
+        le=115,
+        example=22
     )
-    email: EmailStr = Field(...)
-    hair_color: Optional[HairColor] = Field(default=None)
-    is_married: Optional[bool] = Field(default=None)
+    email: EmailStr = Field(..., example="fac@gmail.com")
+    hair_color: Optional[HairColor] = Field(default=None, example="black")
+    is_married: Optional[bool] = Field(default=None, example=False)
+
+    # class Config:
+    #     schema_extra = {
+    #         "example": {
+    #             "first_name": "Facundo",
+    #             "last_name": "Garcia",
+    #             "age": 21,
+    #             "email": "fac@gmail.com",
+    #             "hail_color": "blonde",
+    #             "is_married": False
+    #         }
+    #     }
 
 class Location(BaseModel):
     city: str = Field(
         ...,
         max_length=50,
-        min_length=1
+        min_length=1,
+        example="Medellin"
     )
     state: str = Field(
         ...,
         min_length=1,
-        max_length=50
+        max_length=50,
+        example="Antioquia"
     )
     country: str = Field(
         ...,
         min_length=1,
-        max_length=50
+        max_length=50,
+        example="Colombia"
     )
 
 @app.get("/")
