@@ -177,7 +177,23 @@ def update_a_user():
     tags=["Tweets"]
 )
 def home():
-    return {"Twitter API": "Working"}
+    """
+    This path operation shows all tweets in the app
+
+    Parameters:
+        -
+    
+    Returns a json list with all tweets in the app, whit the following keys
+        - tweet_id: UUID
+        - content: str
+        - created_at: datetime
+        - updated_at: Optional[datetime]
+        - by: User
+    """
+
+    with open("tweets.json", "r", encoding="utf-8") as f:
+        result = json.load(f)
+        return result
 
 ### Post a tweet
 @app.post(
@@ -255,3 +271,5 @@ def update_a_tweet():
 if __name__ == "__main__":
    import uvicorn
    uvicorn.run('main:app', host="127.0.0.1", port=8000, reload=True)
+
+# Ret -- Create all the path operations
