@@ -9,7 +9,7 @@ from pydantic import Field
 # FastAPI
 from fastapi import FastAPI
 from fastapi import status
-from fastapi import Body, Query, Path
+from fastapi import Body, Query, Path, Form
 
 app = FastAPI()
 
@@ -82,6 +82,10 @@ class Location(BaseModel):
         max_length=50,
         example="Colombia"
     )
+
+class LoginOut(BaseModel):
+    username: str = Field(..., max_length=20, example="jp2021")
+    message: str = Field(default='Successful Login in!')
 
 @app.get(
     path="/",
@@ -158,3 +162,11 @@ def update_person(
     results.update(location.dict())
     # person.dict() & location.dict()
     return results
+
+@app.post(
+    path="/loging",
+    response_model=LoginOut,
+    status_code=status.HTTP_200_OK
+)
+def login(username: str = Form(...), password: str = Form(...)):
+    return LoginOut(username=username)
