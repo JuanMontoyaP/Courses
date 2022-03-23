@@ -40,6 +40,9 @@ class User(UserBase):
     )
     birth_date: Optional[date] = Field(default=None)
 
+class UserRegister(User, UserLogin):
+    pass
+
 class Tweet(BaseModel):
     tweet_id: UUID = Field(...)
     content: str = Field(
@@ -64,7 +67,23 @@ class Tweet(BaseModel):
     tags=["Users"]
 )
 def signup():
-    pass
+    """
+    Signup
+    
+    This path operations registers a user in the app
+
+    Parameters:
+        - Request body parameter
+            - user: UserRegister
+    
+    Returns a json with the basic user information:
+        - user_id: UUID
+        - email: EmailStr
+        - firs_name: str
+        - last_name: str
+        _ birth_date: str
+    """
+    
 
 ### Login a user
 @app.post(
