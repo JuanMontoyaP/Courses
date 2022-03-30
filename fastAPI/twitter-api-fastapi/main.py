@@ -188,8 +188,29 @@ def show_a_user(
     summary="Delete a User",
     tags=["Users"]
 )
-def delete_a_user():
-    pass
+def delete_a_user(
+    user_id: UUID = Path(
+        ...,
+        title="User ID",
+        description="This is the user id you want to delete",
+        example="3fa85f64-5717-4562-b3fc-2c963f66afa7"
+    )
+):
+    with open("users.json", "r+", encoding="utf-8") as f:
+        results = json.load(f)
+        for i in range(len(results)):
+            if str(results[i]["user_id"]) == str(user_id):
+                person = results[i]
+                results.pop(i)
+                f.truncate(0)
+                f.seek(0)
+                json.dump(results, f)
+                return person
+        
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="This person does not exist!"
+        )
 
 ### Update a user
 @app.put(
