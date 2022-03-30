@@ -1,41 +1,28 @@
 [
     {
         "tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "content": "string",
-        "created_at": "2022-03-23 15:06:49.123166",
-        "updated_at": "2022-03-23 20:07:28.325000+00:00",
+        "content": "This is the first tweet",
+        "created_at": "2022-03-30 11:33:43.354513",
+        "updated_at": "2022-03-30 16:36:16.686000+00:00",
         "by": {
             "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
             "email": "user@example.com",
-            "firs_name": "string",
-            "last_name": "string",
-            "birth_date": "2022-03-23"
+            "firs_name": "Juan",
+            "last_name": "Montoya",
+            "birth_date": "2022-03-30"
         }
     },
     {
-        "tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa8",
-        "content": "First tweet ever",
-        "created_at": "2022-03-23 15:06:49.123166",
-        "updated_at": "2022-03-23 20:07:28.325000+00:00",
+        "tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "content": "This is the second tweet",
+        "created_at": "2022-03-30 11:33:43.354513",
+        "updated_at": "2022-03-30 16:36:16.686000+00:00",
         "by": {
             "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
             "email": "user@example.com",
-            "firs_name": "string",
-            "last_name": "string",
-            "birth_date": "2022-03-23"
-        }
-    },
-    {
-        "tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
-        "content": "My first tweet",
-        "created_at": "2022-03-23 15:06:49.123166",
-        "updated_at": "2022-03-23 20:07:28.325000+00:00",
-        "by": {
-            "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "email": "user@example.com",
-            "firs_name": "string",
-            "last_name": "string",
-            "birth_date": "2022-03-23"
+            "firs_name": "Juan",
+            "last_name": "Montoya",
+            "birth_date": "2022-03-30"
         }
     }
 ]

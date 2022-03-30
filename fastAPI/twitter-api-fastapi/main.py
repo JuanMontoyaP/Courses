@@ -11,8 +11,8 @@ from pydantic import Field
 
 # FastAPI
 from fastapi import FastAPI
-from fastapi import status
-from fastapi import Body
+from fastapi import status, HTTPException
+from fastapi import Body, Path
 
 app = FastAPI()
 
@@ -26,19 +26,22 @@ class UserLogin(UserBase):
     password: str = Field(
         ...,
         min_length=8,
-        max_length=64
+        max_length=64,
+        example="Juan19980319*"
     )
 
 class User(UserBase):
     firs_name: str = Field(
         ...,
         min_length=1,
-        max_length=50
+        max_length=50,
+        example="Juan"
     )
     last_name: str = Field(
         ...,
         min_length=1,
-        max_length=50
+        max_length=50,
+        example="Montoya"
     )
     birth_date: Optional[date] = Field(default=None)
 
@@ -116,6 +119,8 @@ def login():
 )
 def show_all_users():
     """
+    Show all users
+
     This path operation shows all users in the app
 
     Parameters:
@@ -141,12 +146,43 @@ def show_all_users():
     summary="Show a User",
     tags=["Users"]
 )
-def show_a_user():
-    pass
+def show_a_user(
+    user_id: UUID = Path(
+        ...,
+        example="3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        title="User ID",
+        description="This is the user_id for each person"
+        )
+    ):
+    """
+    Show a user
+
+    This path operation shows the user with user_id
+
+    Parameters:
+        - user_id: UUID
+
+    Returns a json with the user
+        - user_id: UUID
+        - email: EmailStr
+        - firs_name: str
+        - last_name: str
+        _ birth_date: date
+    """
+    with open("users.json", "r", encoding="utf-8") as f:
+        result = json.load(f)
+        for person in result:
+            if str(person["user_id"]) == str(user_id):
+                return person
+
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="This person does not exist!"
+        )
 
 ### Delete a user
 @app.delete(
-    path="/users/{user_id}/delete",
+    path="/users/{user_id}",
     response_model=User,
     status_code=status.HTTP_200_OK,
     summary="Delete a User",
