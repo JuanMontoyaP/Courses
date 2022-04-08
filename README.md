@@ -6,3 +6,5 @@ This repository is for all course I have made and all others that I gonna make
 2. [Python Intermediate (Platzi)](./Python_Intermediate)
 3. [Python Professional (Platzi)](./Python_Professional/)
 4. [Samsung Programming Course (Universidad Javeriana)](./Samsung-Course/)
+5. [FastAPI](./fastAPI/)
+6. [Django](./Django/)
